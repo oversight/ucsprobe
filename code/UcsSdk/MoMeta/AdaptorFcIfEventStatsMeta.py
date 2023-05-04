@@ -1,0 +1,60 @@
+import sys, os
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from UcsHandle import UcsVersion, UcsPropertyMeta, UcsMoMeta
+from UcsMeta import _VersionMeta
+sys.path.remove(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+PROPERTY_DICT = {
+	"ChildAction":UcsPropertyMeta("ChildAction", "childAction", "string", _VersionMeta.Version111j, UcsPropertyMeta.Internal, None, None, None, """((deleteAll|ignore|deleteNonPresent),){0,2}(deleteAll|ignore|deleteNonPresent){0,1}""", [], ["0-4294967295"]),
+	"Dn":UcsPropertyMeta("Dn", "dn", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, 0, 256, None, [], ["0-4294967295"]),
+	"Intervals":UcsPropertyMeta("Intervals", "intervals", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"InvalidCRCCount":UcsPropertyMeta("InvalidCRCCount", "invalidCRCCount", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"InvalidCRCCountDelta":UcsPropertyMeta("InvalidCRCCountDelta", "invalidCRCCountDelta", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"InvalidCRCCountDeltaAvg":UcsPropertyMeta("InvalidCRCCountDeltaAvg", "invalidCRCCountDeltaAvg", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"InvalidCRCCountDeltaMax":UcsPropertyMeta("InvalidCRCCountDeltaMax", "invalidCRCCountDeltaMax", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"InvalidCRCCountDeltaMin":UcsPropertyMeta("InvalidCRCCountDeltaMin", "invalidCRCCountDeltaMin", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"LinkFailureCount":UcsPropertyMeta("LinkFailureCount", "linkFailureCount", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"LinkFailureCountDelta":UcsPropertyMeta("LinkFailureCountDelta", "linkFailureCountDelta", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"LinkFailureCountDeltaAvg":UcsPropertyMeta("LinkFailureCountDeltaAvg", "linkFailureCountDeltaAvg", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"LinkFailureCountDeltaMax":UcsPropertyMeta("LinkFailureCountDeltaMax", "linkFailureCountDeltaMax", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"LinkFailureCountDeltaMin":UcsPropertyMeta("LinkFailureCountDeltaMin", "linkFailureCountDeltaMin", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"LipCount":UcsPropertyMeta("LipCount", "lipCount", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"LipCountDelta":UcsPropertyMeta("LipCountDelta", "lipCountDelta", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"LipCountDeltaAvg":UcsPropertyMeta("LipCountDeltaAvg", "lipCountDeltaAvg", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"LipCountDeltaMax":UcsPropertyMeta("LipCountDeltaMax", "lipCountDeltaMax", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"LipCountDeltaMin":UcsPropertyMeta("LipCountDeltaMin", "lipCountDeltaMin", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"LossOfSignalCount":UcsPropertyMeta("LossOfSignalCount", "lossOfSignalCount", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"LossOfSignalCountDelta":UcsPropertyMeta("LossOfSignalCountDelta", "lossOfSignalCountDelta", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"LossOfSignalCountDeltaAvg":UcsPropertyMeta("LossOfSignalCountDeltaAvg", "lossOfSignalCountDeltaAvg", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"LossOfSignalCountDeltaMax":UcsPropertyMeta("LossOfSignalCountDeltaMax", "lossOfSignalCountDeltaMax", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"LossOfSignalCountDeltaMin":UcsPropertyMeta("LossOfSignalCountDeltaMin", "lossOfSignalCountDeltaMin", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"LossOfSyncCount":UcsPropertyMeta("LossOfSyncCount", "lossOfSyncCount", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"LossOfSyncCountDelta":UcsPropertyMeta("LossOfSyncCountDelta", "lossOfSyncCountDelta", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"LossOfSyncCountDeltaAvg":UcsPropertyMeta("LossOfSyncCountDeltaAvg", "lossOfSyncCountDeltaAvg", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"LossOfSyncCountDeltaMax":UcsPropertyMeta("LossOfSyncCountDeltaMax", "lossOfSyncCountDeltaMax", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"LossOfSyncCountDeltaMin":UcsPropertyMeta("LossOfSyncCountDeltaMin", "lossOfSyncCountDeltaMin", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"NOSCount":UcsPropertyMeta("NOSCount", "nOSCount", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"NOSCountDelta":UcsPropertyMeta("NOSCountDelta", "nOSCountDelta", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"NOSCountDeltaAvg":UcsPropertyMeta("NOSCountDeltaAvg", "nOSCountDeltaAvg", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"NOSCountDeltaMax":UcsPropertyMeta("NOSCountDeltaMax", "nOSCountDeltaMax", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"NOSCountDeltaMin":UcsPropertyMeta("NOSCountDeltaMin", "nOSCountDeltaMin", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"Rn":UcsPropertyMeta("Rn", "rn", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, 0, 256, None, [], ["0-4294967295"]),
+	"SecondsSinceLastReset":UcsPropertyMeta("SecondsSinceLastReset", "secondsSinceLastReset", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"SecondsSinceLastResetDelta":UcsPropertyMeta("SecondsSinceLastResetDelta", "secondsSinceLastResetDelta", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"SecondsSinceLastResetDeltaAvg":UcsPropertyMeta("SecondsSinceLastResetDeltaAvg", "secondsSinceLastResetDeltaAvg", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"SecondsSinceLastResetDeltaMax":UcsPropertyMeta("SecondsSinceLastResetDeltaMax", "secondsSinceLastResetDeltaMax", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"SecondsSinceLastResetDeltaMin":UcsPropertyMeta("SecondsSinceLastResetDeltaMin", "secondsSinceLastResetDeltaMin", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"SeqProtocolErrCount":UcsPropertyMeta("SeqProtocolErrCount", "seqProtocolErrCount", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"SeqProtocolErrCountDelta":UcsPropertyMeta("SeqProtocolErrCountDelta", "seqProtocolErrCountDelta", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"SeqProtocolErrCountDeltaAvg":UcsPropertyMeta("SeqProtocolErrCountDeltaAvg", "seqProtocolErrCountDeltaAvg", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"SeqProtocolErrCountDeltaMax":UcsPropertyMeta("SeqProtocolErrCountDeltaMax", "seqProtocolErrCountDeltaMax", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"SeqProtocolErrCountDeltaMin":UcsPropertyMeta("SeqProtocolErrCountDeltaMin", "seqProtocolErrCountDeltaMin", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["NA"], ["0-4294967295"]),
+	"Status":UcsPropertyMeta("Status", "status", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadWrite, None, None, None, """((removed|created|modified|deleted),){0,3}(removed|created|modified|deleted){0,1}""", [], ["0-4294967295"]),
+	"Suspect":UcsPropertyMeta("Suspect", "suspect", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["false", "no", "true", "yes"], ["0-4294967295"]),
+	"Thresholded":UcsPropertyMeta("Thresholded", "thresholded", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"TimeCollected":UcsPropertyMeta("TimeCollected", "timeCollected", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, """([0-9]){4}-([0-9]){2}-([0-9]){2}T([0-9]){2}:([0-9]){2}:([0-9]){2}((\.([0-9]){3})){0,1}""", [], ["0-4294967295"]),
+	"Update":UcsPropertyMeta("Update", "update", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"Meta":UcsMoMeta("AdaptorFcIfEventStats", "adaptorFcIfEventStats", "fc-if-event-stats", _VersionMeta.Version111j, "OutputOnly", 0x0L, [], [u'adaptorFcIfEventStatsHist'], ["Get"], ["admin", "operations", "read-only"])
+}
+

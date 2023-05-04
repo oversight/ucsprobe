@@ -1,0 +1,75 @@
+import sys, os
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from UcsBase import ManagedObject
+sys.path.remove(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+class VnicScsi(ManagedObject):
+	def __init__(self):
+		ManagedObject.__init__(self,"VnicScsi")
+
+	@staticmethod
+	def ClassId():
+		return "vnicScsi"
+
+	ADAPTOR_PROFILE_NAME = "AdaptorProfileName"
+	ADMIN_VCON = "AdminVcon"
+	BOOT_DEV = "BootDev"
+	CONFIG_QUALIFIER = "ConfigQualifier"
+	CONFIG_STATE = "ConfigState"
+	DN = "Dn"
+	EQUIPMENT_DN = "EquipmentDn"
+	IDENT_POOL_NAME = "IdentPoolName"
+	INST_TYPE = "InstType"
+	NAME = "Name"
+	NW_TEMPL_NAME = "NwTemplName"
+	OPER_ORDER = "OperOrder"
+	OPER_SPEED = "OperSpeed"
+	OPER_STATS_POLICY_NAME = "OperStatsPolicyName"
+	OPER_VCON = "OperVcon"
+	ORDER = "Order"
+	OWNER = "Owner"
+	PIN_TO_GROUP_NAME = "PinToGroupName"
+	QOS_POLICY_NAME = "QosPolicyName"
+	RN = "Rn"
+	STATS_POLICY_NAME = "StatsPolicyName"
+	STATUS = "Status"
+	SWITCH_ID = "SwitchId"
+	TYPE = "Type"
+
+	CONST_ADMIN_VCON_1 = "1"
+	CONST_ADMIN_VCON_2 = "2"
+	CONST_ADMIN_VCON_3 = "3"
+	CONST_ADMIN_VCON_4 = "4"
+	CONST_ADMIN_VCON_ANY = "any"
+	CONST_BOOT_DEV_DISABLED = "disabled"
+	CONST_BOOT_DEV_ENABLED = "enabled"
+	CONST_CONFIG_STATE_APPLIED = "applied"
+	CONST_CONFIG_STATE_APPLYING = "applying"
+	CONST_CONFIG_STATE_FAILED_TO_APPLY = "failed-to-apply"
+	CONST_CONFIG_STATE_NOT_APPLIED = "not-applied"
+	CONST_INST_TYPE_DEFAULT = "default"
+	CONST_INST_TYPE_DYNAMIC = "dynamic"
+	CONST_INST_TYPE_DYNAMIC_VF = "dynamic-vf"
+	CONST_INST_TYPE_MANUAL = "manual"
+	CONST_OPER_ORDER_UNSPECIFIED = "unspecified"
+	CONST_OPER_SPEED_LINE_RATE = "line-rate"
+	CONST_OPER_VCON_1 = "1"
+	CONST_OPER_VCON_2 = "2"
+	CONST_OPER_VCON_3 = "3"
+	CONST_OPER_VCON_4 = "4"
+	CONST_OPER_VCON_ANY = "any"
+	CONST_ORDER_UNSPECIFIED = "unspecified"
+	CONST_OWNER_CONN_POLICY = "conn_policy"
+	CONST_OWNER_LOGICAL = "logical"
+	CONST_OWNER_PHYSICAL = "physical"
+	CONST_OWNER_POLICY = "policy"
+	CONST_OWNER_UNKNOWN = "unknown"
+	CONST_SWITCH_ID_A = "A"
+	CONST_SWITCH_ID_B = "B"
+	CONST_SWITCH_ID_NONE = "NONE"
+	CONST_TYPE_ETHER = "ether"
+	CONST_TYPE_FC = "fc"
+	CONST_TYPE_IPC = "ipc"
+	CONST_TYPE_SCSI = "scsi"
+	CONST_TYPE_UNKNOWN = "unknown"

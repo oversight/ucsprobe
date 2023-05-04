@@ -1,0 +1,15 @@
+import sys, os
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from UcsHandle import UcsVersion, UcsPropertyMeta, UcsMoMeta
+from UcsMeta import _VersionMeta
+sys.path.remove(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+PROPERTY_DICT = {
+	"ChildAction":UcsPropertyMeta("ChildAction", "childAction", "string", _VersionMeta.Version131c, UcsPropertyMeta.Internal, 0x1L, None, None, """((deleteAll|ignore|deleteNonPresent),){0,2}(deleteAll|ignore|deleteNonPresent){0,1}""", [], ["0-4294967295"]),
+	"Dn":UcsPropertyMeta("Dn", "dn", "string", _VersionMeta.Version131c, UcsPropertyMeta.ReadOnly, 0x2L, 0, 256, None, [], ["0-4294967295"]),
+	"Rn":UcsPropertyMeta("Rn", "rn", "string", _VersionMeta.Version131c, UcsPropertyMeta.ReadOnly, 0x4L, 0, 256, None, [], ["0-4294967295"]),
+	"Status":UcsPropertyMeta("Status", "status", "string", _VersionMeta.Version131c, UcsPropertyMeta.ReadWrite, 0x8L, None, None, """((removed|created|modified|deleted),){0,3}(removed|created|modified|deleted){0,1}""", [], ["0-4294967295"]),
+	"Meta":UcsMoMeta("BiosSettings", "biosSettings", "bios-settings", _VersionMeta.Version131c, "InputOutput", 0xfL, [], [u'biosVfACPI10Support', u'biosVfAllUSBDevices', u'biosVfAssertNMIOnPERR', u'biosVfAssertNMIOnSERR', u'biosVfBootOptionRetry', u'biosVfCPUPerformance', u'biosVfConsoleRedirection', u'biosVfCoreMultiProcessing', u'biosVfDRAMClockThrottling', u'biosVfDirectCacheAccess', u'biosVfDramRefreshRate', u'biosVfEnhancedIntelSpeedStepTech', u'biosVfExecuteDisableBit', u'biosVfFRB2Timer', u'biosVfFrequencyFloorOverride', u'biosVfFrontPanelLockout', u'biosVfIntelEntrySASRAIDModule', u'biosVfIntelHyperThreadingTech', u'biosVfIntelTurboBoostTech', u'biosVfIntelVTForDirectedIO', u'biosVfIntelVirtualizationTechnology', u'biosVfInterleaveConfiguration', u'biosVfLOMPortsConfiguration', u'biosVfLocalX2Apic', u'biosVfLvDIMMSupport', u'biosVfMaxVariableMTRRSetting', u'biosVfMaximumMemoryBelow4GB', u'biosVfMemoryMappedIOAbove4GB', u'biosVfMirroringMode', u'biosVfNUMAOptimized', u'biosVfOSBootWatchdogTimer', u'biosVfOSBootWatchdogTimerPolicy', u'biosVfOSBootWatchdogTimerTimeout', u'biosVfOnboardSATAController', u'biosVfOnboardStorage', u'biosVfOptionROMEnable', u'biosVfOptionROMLoad', u'biosVfPCISlotLinkSpeed', u'biosVfPCISlotOptionROMEnable', u'biosVfPOSTErrorPause', u'biosVfPSTATECoordination', u'biosVfPackageCStateLimit', u'biosVfProcessorC1E', u'biosVfProcessorC3Report', u'biosVfProcessorC6Report', u'biosVfProcessorC7Report', u'biosVfProcessorCState', u'biosVfProcessorEnergyConfiguration', u'biosVfProcessorPrefetchConfig', u'biosVfQPILinkFrequencySelect', u'biosVfQuietBoot', u'biosVfResumeOnACPowerLoss', u'biosVfScrubPolicies', u'biosVfSelectMemoryRASConfiguration', u'biosVfSerialPortAEnable', u'biosVfSparingMode', u'biosVfSriovConfig', u'biosVfUCSMBootModeControl', u'biosVfUCSMBootOrderRuleControl', u'biosVfUEFIOSUseLegacyVideo', u'biosVfUSBBootConfig', u'biosVfUSBFrontPanelAccessLock', u'biosVfUSBPortConfiguration', u'biosVfUSBSystemIdlePowerOptimizingSetting', u'biosVfVGAPriority'], ["Get"], [""])
+}
+

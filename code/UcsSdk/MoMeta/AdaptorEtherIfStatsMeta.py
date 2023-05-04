@@ -1,0 +1,60 @@
+import sys, os
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from UcsHandle import UcsVersion, UcsPropertyMeta, UcsMoMeta
+from UcsMeta import _VersionMeta
+sys.path.remove(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+PROPERTY_DICT = {
+	"ChildAction":UcsPropertyMeta("ChildAction", "childAction", "string", _VersionMeta.Version111j, UcsPropertyMeta.Internal, None, None, None, """((deleteAll|ignore|deleteNonPresent),){0,2}(deleteAll|ignore|deleteNonPresent){0,1}""", [], ["0-4294967295"]),
+	"Dn":UcsPropertyMeta("Dn", "dn", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, 0, 256, None, [], ["0-4294967295"]),
+	"Intervals":UcsPropertyMeta("Intervals", "intervals", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"Rn":UcsPropertyMeta("Rn", "rn", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, 0, 256, None, [], ["0-4294967295"]),
+	"RxBytes":UcsPropertyMeta("RxBytes", "rxBytes", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"RxBytesDelta":UcsPropertyMeta("RxBytesDelta", "rxBytesDelta", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"RxBytesDeltaAvg":UcsPropertyMeta("RxBytesDeltaAvg", "rxBytesDeltaAvg", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"RxBytesDeltaMax":UcsPropertyMeta("RxBytesDeltaMax", "rxBytesDeltaMax", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"RxBytesDeltaMin":UcsPropertyMeta("RxBytesDeltaMin", "rxBytesDeltaMin", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"RxDropped":UcsPropertyMeta("RxDropped", "rxDropped", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"RxDroppedDelta":UcsPropertyMeta("RxDroppedDelta", "rxDroppedDelta", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"RxDroppedDeltaAvg":UcsPropertyMeta("RxDroppedDeltaAvg", "rxDroppedDeltaAvg", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"RxDroppedDeltaMax":UcsPropertyMeta("RxDroppedDeltaMax", "rxDroppedDeltaMax", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"RxDroppedDeltaMin":UcsPropertyMeta("RxDroppedDeltaMin", "rxDroppedDeltaMin", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"RxErrors":UcsPropertyMeta("RxErrors", "rxErrors", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"RxErrorsDelta":UcsPropertyMeta("RxErrorsDelta", "rxErrorsDelta", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"RxErrorsDeltaAvg":UcsPropertyMeta("RxErrorsDeltaAvg", "rxErrorsDeltaAvg", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"RxErrorsDeltaMax":UcsPropertyMeta("RxErrorsDeltaMax", "rxErrorsDeltaMax", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"RxErrorsDeltaMin":UcsPropertyMeta("RxErrorsDeltaMin", "rxErrorsDeltaMin", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"RxPackets":UcsPropertyMeta("RxPackets", "rxPackets", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"RxPacketsDelta":UcsPropertyMeta("RxPacketsDelta", "rxPacketsDelta", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"RxPacketsDeltaAvg":UcsPropertyMeta("RxPacketsDeltaAvg", "rxPacketsDeltaAvg", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"RxPacketsDeltaMax":UcsPropertyMeta("RxPacketsDeltaMax", "rxPacketsDeltaMax", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"RxPacketsDeltaMin":UcsPropertyMeta("RxPacketsDeltaMin", "rxPacketsDeltaMin", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"Status":UcsPropertyMeta("Status", "status", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadWrite, None, None, None, """((removed|created|modified|deleted),){0,3}(removed|created|modified|deleted){0,1}""", [], ["0-4294967295"]),
+	"Suspect":UcsPropertyMeta("Suspect", "suspect", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, ["false", "no", "true", "yes"], ["0-4294967295"]),
+	"Thresholded":UcsPropertyMeta("Thresholded", "thresholded", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"TimeCollected":UcsPropertyMeta("TimeCollected", "timeCollected", "string", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, """([0-9]){4}-([0-9]){2}-([0-9]){2}T([0-9]){2}:([0-9]){2}:([0-9]){2}((\.([0-9]){3})){0,1}""", [], ["0-4294967295"]),
+	"TxBytes":UcsPropertyMeta("TxBytes", "txBytes", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"TxBytesDelta":UcsPropertyMeta("TxBytesDelta", "txBytesDelta", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"TxBytesDeltaAvg":UcsPropertyMeta("TxBytesDeltaAvg", "txBytesDeltaAvg", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"TxBytesDeltaMax":UcsPropertyMeta("TxBytesDeltaMax", "txBytesDeltaMax", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"TxBytesDeltaMin":UcsPropertyMeta("TxBytesDeltaMin", "txBytesDeltaMin", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"TxDropped":UcsPropertyMeta("TxDropped", "txDropped", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"TxDroppedDelta":UcsPropertyMeta("TxDroppedDelta", "txDroppedDelta", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"TxDroppedDeltaAvg":UcsPropertyMeta("TxDroppedDeltaAvg", "txDroppedDeltaAvg", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"TxDroppedDeltaMax":UcsPropertyMeta("TxDroppedDeltaMax", "txDroppedDeltaMax", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"TxDroppedDeltaMin":UcsPropertyMeta("TxDroppedDeltaMin", "txDroppedDeltaMin", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"TxErrors":UcsPropertyMeta("TxErrors", "txErrors", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"TxErrorsDelta":UcsPropertyMeta("TxErrorsDelta", "txErrorsDelta", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"TxErrorsDeltaAvg":UcsPropertyMeta("TxErrorsDeltaAvg", "txErrorsDeltaAvg", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"TxErrorsDeltaMax":UcsPropertyMeta("TxErrorsDeltaMax", "txErrorsDeltaMax", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"TxErrorsDeltaMin":UcsPropertyMeta("TxErrorsDeltaMin", "txErrorsDeltaMin", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"TxPackets":UcsPropertyMeta("TxPackets", "txPackets", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"TxPacketsDelta":UcsPropertyMeta("TxPacketsDelta", "txPacketsDelta", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"TxPacketsDeltaAvg":UcsPropertyMeta("TxPacketsDeltaAvg", "txPacketsDeltaAvg", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"TxPacketsDeltaMax":UcsPropertyMeta("TxPacketsDeltaMax", "txPacketsDeltaMax", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"TxPacketsDeltaMin":UcsPropertyMeta("TxPacketsDeltaMin", "txPacketsDeltaMin", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"Update":UcsPropertyMeta("Update", "update", "uint", _VersionMeta.Version111j, UcsPropertyMeta.ReadOnly, None, None, None, None, [], ["0-4294967295"]),
+	"Meta":UcsMoMeta("AdaptorEtherIfStats", "adaptorEtherIfStats", "ether-if-stats", _VersionMeta.Version111j, "OutputOnly", 0x0L, [], [u'adaptorEtherIfStatsHist'], ["Get"], ["admin", "operations", "read-only"])
+}
+

@@ -1,0 +1,77 @@
+import sys, os
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from UcsBase import ManagedObject
+sys.path.remove(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+class FcErrStats(ManagedObject):
+	def __init__(self):
+		ManagedObject.__init__(self,"FcErrStats")
+
+	@staticmethod
+	def ClassId():
+		return "fcErrStats"
+
+	CRC_RX = "CrcRx"
+	CRC_RX_DELTA = "CrcRxDelta"
+	CRC_RX_DELTA_AVG = "CrcRxDeltaAvg"
+	CRC_RX_DELTA_MAX = "CrcRxDeltaMax"
+	CRC_RX_DELTA_MIN = "CrcRxDeltaMin"
+	DISCARD_RX = "DiscardRx"
+	DISCARD_RX_DELTA = "DiscardRxDelta"
+	DISCARD_RX_DELTA_AVG = "DiscardRxDeltaAvg"
+	DISCARD_RX_DELTA_MAX = "DiscardRxDeltaMax"
+	DISCARD_RX_DELTA_MIN = "DiscardRxDeltaMin"
+	DISCARD_TX = "DiscardTx"
+	DISCARD_TX_DELTA = "DiscardTxDelta"
+	DISCARD_TX_DELTA_AVG = "DiscardTxDeltaAvg"
+	DISCARD_TX_DELTA_MAX = "DiscardTxDeltaMax"
+	DISCARD_TX_DELTA_MIN = "DiscardTxDeltaMin"
+	DN = "Dn"
+	INTERVALS = "Intervals"
+	LINK_FAILURES = "LinkFailures"
+	LINK_FAILURES_DELTA = "LinkFailuresDelta"
+	LINK_FAILURES_DELTA_AVG = "LinkFailuresDeltaAvg"
+	LINK_FAILURES_DELTA_MAX = "LinkFailuresDeltaMax"
+	LINK_FAILURES_DELTA_MIN = "LinkFailuresDeltaMin"
+	RN = "Rn"
+	RX = "Rx"
+	RX_DELTA = "RxDelta"
+	RX_DELTA_AVG = "RxDeltaAvg"
+	RX_DELTA_MAX = "RxDeltaMax"
+	RX_DELTA_MIN = "RxDeltaMin"
+	SIGNAL_LOSSES = "SignalLosses"
+	SIGNAL_LOSSES_DELTA = "SignalLossesDelta"
+	SIGNAL_LOSSES_DELTA_AVG = "SignalLossesDeltaAvg"
+	SIGNAL_LOSSES_DELTA_MAX = "SignalLossesDeltaMax"
+	SIGNAL_LOSSES_DELTA_MIN = "SignalLossesDeltaMin"
+	STATUS = "Status"
+	SUSPECT = "Suspect"
+	SYNC_LOSSES = "SyncLosses"
+	SYNC_LOSSES_DELTA = "SyncLossesDelta"
+	SYNC_LOSSES_DELTA_AVG = "SyncLossesDeltaAvg"
+	SYNC_LOSSES_DELTA_MAX = "SyncLossesDeltaMax"
+	SYNC_LOSSES_DELTA_MIN = "SyncLossesDeltaMin"
+	THRESHOLDED = "Thresholded"
+	TIME_COLLECTED = "TimeCollected"
+	TOO_LONG_RX = "TooLongRx"
+	TOO_LONG_RX_DELTA = "TooLongRxDelta"
+	TOO_LONG_RX_DELTA_AVG = "TooLongRxDeltaAvg"
+	TOO_LONG_RX_DELTA_MAX = "TooLongRxDeltaMax"
+	TOO_LONG_RX_DELTA_MIN = "TooLongRxDeltaMin"
+	TOO_SHORT_RX = "TooShortRx"
+	TOO_SHORT_RX_DELTA = "TooShortRxDelta"
+	TOO_SHORT_RX_DELTA_AVG = "TooShortRxDeltaAvg"
+	TOO_SHORT_RX_DELTA_MAX = "TooShortRxDeltaMax"
+	TOO_SHORT_RX_DELTA_MIN = "TooShortRxDeltaMin"
+	TX = "Tx"
+	TX_DELTA = "TxDelta"
+	TX_DELTA_AVG = "TxDeltaAvg"
+	TX_DELTA_MAX = "TxDeltaMax"
+	TX_DELTA_MIN = "TxDeltaMin"
+	UPDATE = "Update"
+
+	CONST_SUSPECT_FALSE = "false"
+	CONST_SUSPECT_NO = "no"
+	CONST_SUSPECT_TRUE = "true"
+	CONST_SUSPECT_YES = "yes"

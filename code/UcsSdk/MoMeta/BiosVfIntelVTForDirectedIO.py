@@ -1,0 +1,43 @@
+import sys, os
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from UcsBase import ManagedObject
+sys.path.remove(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+class BiosVfIntelVTForDirectedIO(ManagedObject):
+	def __init__(self):
+		ManagedObject.__init__(self,"BiosVfIntelVTForDirectedIO")
+
+	@staticmethod
+	def ClassId():
+		return "biosVfIntelVTForDirectedIO"
+
+	DN = "Dn"
+	RN = "Rn"
+	STATUS = "Status"
+	VP_INTEL_VTDATSSUPPORT = "VpIntelVTDATSSupport"
+	VP_INTEL_VTDCOHERENCY_SUPPORT = "VpIntelVTDCoherencySupport"
+	VP_INTEL_VTDINTERRUPT_REMAPPING = "VpIntelVTDInterruptRemapping"
+	VP_INTEL_VTDPASS_THROUGH_DMASUPPORT = "VpIntelVTDPassThroughDMASupport"
+	VP_INTEL_VTFOR_DIRECTED_IO = "VpIntelVTForDirectedIO"
+
+	CONST_VP_INTEL_VTDATSSUPPORT_DISABLED = "disabled"
+	CONST_VP_INTEL_VTDATSSUPPORT_ENABLED = "enabled"
+	CONST_VP_INTEL_VTDATSSUPPORT_PLATFORM_DEFAULT = "platform-default"
+	CONST_VP_INTEL_VTDATSSUPPORT_PLATFORM_RECOMMENDED = "platform-recommended"
+	CONST_VP_INTEL_VTDCOHERENCY_SUPPORT_DISABLED = "disabled"
+	CONST_VP_INTEL_VTDCOHERENCY_SUPPORT_ENABLED = "enabled"
+	CONST_VP_INTEL_VTDCOHERENCY_SUPPORT_PLATFORM_DEFAULT = "platform-default"
+	CONST_VP_INTEL_VTDCOHERENCY_SUPPORT_PLATFORM_RECOMMENDED = "platform-recommended"
+	CONST_VP_INTEL_VTDINTERRUPT_REMAPPING_DISABLED = "disabled"
+	CONST_VP_INTEL_VTDINTERRUPT_REMAPPING_ENABLED = "enabled"
+	CONST_VP_INTEL_VTDINTERRUPT_REMAPPING_PLATFORM_DEFAULT = "platform-default"
+	CONST_VP_INTEL_VTDINTERRUPT_REMAPPING_PLATFORM_RECOMMENDED = "platform-recommended"
+	CONST_VP_INTEL_VTDPASS_THROUGH_DMASUPPORT_DISABLED = "disabled"
+	CONST_VP_INTEL_VTDPASS_THROUGH_DMASUPPORT_ENABLED = "enabled"
+	CONST_VP_INTEL_VTDPASS_THROUGH_DMASUPPORT_PLATFORM_DEFAULT = "platform-default"
+	CONST_VP_INTEL_VTDPASS_THROUGH_DMASUPPORT_PLATFORM_RECOMMENDED = "platform-recommended"
+	CONST_VP_INTEL_VTFOR_DIRECTED_IO_DISABLED = "disabled"
+	CONST_VP_INTEL_VTFOR_DIRECTED_IO_ENABLED = "enabled"
+	CONST_VP_INTEL_VTFOR_DIRECTED_IO_PLATFORM_DEFAULT = "platform-default"
+	CONST_VP_INTEL_VTFOR_DIRECTED_IO_PLATFORM_RECOMMENDED = "platform-recommended"
